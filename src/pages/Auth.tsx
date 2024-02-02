@@ -4,16 +4,19 @@ import {AuthService} from "../services/auth";
 import {toast} from "react-toastify";
 import {setTokenFromLocalStorage} from "../helpers/localstorage";
 import {useAppDispatch, useAppSelector} from "../redux/store";
-import {authLogin, changeTypeOfForm} from "../redux/slices/userSlice";
+import {authLogin, changeTypeOfForm, setLogin, setPassword} from "../redux/slices/userSlice";
 import ViewTrue  from '../img/viewTrue.png';
-// import ViewFalse  from '../img/viewFalse.png';
+import ViewFalse  from '../img/viewFalse.png';
 
 const Auth:React.FC = () => {
-    const {typeOfForm} = useAppSelector((state) => state.user);
-    const [login, setLogin] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
+    const {typeOfForm, login, password} = useAppSelector((state) => state.user);
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(!isPasswordVisible);
+    };
 
     const loginHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         try {
@@ -23,7 +26,7 @@ const Auth:React.FC = () => {
                 setTokenFromLocalStorage('token', data.token);
                 dispatch(authLogin(data));
                 toast.success('Вы авторизировались');
-                navigate('/');
+                navigate('/profile');
             }
         }catch (err:any){
             const error = err.response?.data.message
@@ -31,7 +34,6 @@ const Auth:React.FC = () => {
         }
     }
    const registrationHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-        console.log(1);
        try {
            e.preventDefault();
            const data = await  AuthService.registration({login, password})
@@ -44,6 +46,7 @@ const Auth:React.FC = () => {
            toast.error(error.toString())
        }
    }
+
     return (
         <div>
             <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -60,7 +63,7 @@ const Auth:React.FC = () => {
                                     type="text"
                                     required
                                     className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-300 sm:text-sm sm:leading-6"
-                                    onChange={(e) => setLogin(e.target.value)}/>
+                                    onChange={(e) => dispatch(setLogin(e.target.value))}/>
                             </div>
                         </div>
                         <div>
@@ -71,11 +74,16 @@ const Auth:React.FC = () => {
                                 <input
                                     id="password-input"
                                     name="password"
-                                    type="password"
+                                    type={isPasswordVisible ? 'text' : 'password'}
                                     required
                                     className="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-yellow-300 sm:text-sm sm:leading-6"
-                                    onChange={(e) => setPassword(e.target.value)}/>
-                                <img src={ViewTrue} className='absolute top-[8px] right-[10px] inline-block w-[20px] h-[20px] cursor-pointer'></img>
+                                    onChange={(e) => dispatch(setPassword(e.target.value))}
+
+                                />
+                                <img src={isPasswordVisible ? ViewTrue : ViewFalse}
+                                     className='absolute top-[8px] right-[10px] inline-block w-[20px] h-[20px] cursor-pointer'
+                                     onClick={togglePasswordVisibility}
+                                ></img>
                             </div>
                         </div>
                         <div>

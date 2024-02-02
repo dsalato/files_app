@@ -1,42 +1,50 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../../redux/store'
 import {User} from "../../types/types";
 
 interface UserState {
-    user: User | null,
     isAuth: boolean,
-    typeOfForm: boolean
+    token: User | null,
+    typeOfForm: boolean,
+    login: string,
+    password: string,
 }
 
 const initialState: UserState = {
-    user: null,
     isAuth: false,
+    token: null,
     typeOfForm: false,
+    login: '',
+    password: '',
 }
+
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
         authLogin: (state, action: PayloadAction<User>) => {
-            state.user = action.payload;
+            state.token = action.payload;
             state.isAuth = true;
         },
         logout: (state) => {
-            state.user = null;
+            state.token = null;
             state.isAuth = false;
         },
         changeTypeOfForm: (state, action: PayloadAction<boolean> ) => {
             state.typeOfForm = action.payload
+        },
+        setPassword: (state, action) =>{
+            state.password = action.payload;
+        },
+        setLogin: (state, action) =>{
+            state.login = action.payload;
         }
 
     },
 })
 
-export const {authLogin,logout,changeTypeOfForm} = userSlice.actions
+export const {authLogin,logout,changeTypeOfForm,setLogin,setPassword} = userSlice.actions
 
-// Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.user
 
 export default userSlice.reducer
