@@ -12,10 +12,8 @@ const Header: React.FC = () => {
     const navigate = useNavigate();
 
     const logoutHandker = () => {
-        console.log('вышли');
         removeTokenFromLocalStorage('token');
         dispatch(logout());
-        window.location.reload();
         navigate('/');
         toast.success('Вы вышли');
     }
@@ -29,6 +27,7 @@ const Header: React.FC = () => {
                 <Link to='/auth' onClick={() => dispatch(changeTypeOfForm(false))}
                       className='text-lg hover:bg-yellow-400 py-4 px-2 rounded'>Регистрация</Link>
             </span> : <span className=''>
+                <Link to='/drive' className='mx-3 text-lg hover:bg-yellow-400 py-4 px-2 rounded'>Папки и Файлы</Link>
                 <Link to='/' className='mx-3 text-lg hover:bg-yellow-400 py-4 px-2 rounded'
                       onClick={logoutHandker}>Выход</Link>
             </span>}

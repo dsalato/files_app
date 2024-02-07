@@ -26,7 +26,7 @@ const Auth:React.FC = () => {
                 setTokenFromLocalStorage('token', data.token);
                 dispatch(authLogin(data));
                 toast.success('Вы авторизировались');
-                navigate('/profile');
+                navigate('/drive');
             }
         }catch (err:any){
             const error = err.response?.data.message

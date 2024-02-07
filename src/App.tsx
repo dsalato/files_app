@@ -3,8 +3,9 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import Main from './layouts/Main';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
-import Profile from "./pages/Profile";
+import Profile from "./pages/Drive";
 import {isAuthenticated} from "./components/isAuthenticated";
+import Drive from "./pages/Drive";
 
 
 // Гостевой компонент
@@ -22,7 +23,7 @@ const App = () => {
         <Routes>
             <Route path="/" element={<Main />}>
                 <Route index element={<Home />}/>
-                <Route path="profile" element={<ProtectedRoute path="profile" element={<Profile />} />} />
+                <Route path="drive" element={<ProtectedRoute path="drive" element={<Drive />} />} />
                 <Route path="auth" element={<GuestRoute element={<Auth />} />} />
             </Route>
         </Routes>
