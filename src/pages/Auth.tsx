@@ -81,6 +81,7 @@ const Auth:React.FC = () => {
 
                                 />
                                 <img src={isPasswordVisible ? ViewTrue : ViewFalse}
+                                     alt='скрытый пароль'
                                      className='absolute top-[8px] right-[10px] inline-block w-[20px] h-[20px] cursor-pointer'
                                      onClick={togglePasswordVisibility}
                                 ></img>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useAppDispatch, useAppSelector} from "../../redux/store";
-import {setActiveModal, setName} from "../../redux/slices/folderSlice";
+import {setActiveModal, setEditingFolderId, setName} from "../../redux/slices/folderSlice";
 import {toast} from "react-toastify";
 import {FolderService} from "../../services/folder";
 import iconClose  from '../../img/iconClose.png';
@@ -11,19 +11,27 @@ const Modal: React.FC = () => {
     const {activeModal} = useAppSelector((state) => state.folder);
     const name = useAppSelector((state) => state.folder.folderName);
     const parentId = useAppSelector((state) => state.folder.folders.id);
-
+    const editingFolderId = useAppSelector((state) => state.folder.editingFolderId);
 
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault();
-            const data = await FolderService.createFolder({name, parentId});
-
-            if(data){
+            if (editingFolderId) {
+                // Если редактируется папка, то вызываем updateFolder
+                const data = await FolderService.updateFolder(editingFolderId, { name, parentId });
+                dispatch(setEditingFolderId(null));
+                console.log(data, 'изменение');
+                toast.success('Папка успешно изменена')
+            } else {
+                // Если не редактируется, то вызываем createFolder
+                const data = await FolderService.createFolder({ name, parentId });
+                console.log(data, 'создание');
                 toast.success('Папка успешно создана')
-                dispatch(setActiveModal())
 
             }
+            dispatch(setActiveModal())
+
         }catch (err:any){
             const error = err.response?.data.message
             toast.error(error.toString())
@@ -33,7 +41,7 @@ const Modal: React.FC = () => {
     return (
         <div className= { activeModal ? 'scale-1 h-[100vh] w-[100vw] bg-gray-700/45 fixed top-0 left-0 flex items-center justify-center duration-50' : 'hidden'} >
             <div className='p-5 rounded-xl bg-white h-[200px] w-[400px]' onClick={(e) => e.stopPropagation()} >
-                <img src={iconClose} className='w-[20px] h-[20px] float-right cursor-pointer' onClick={()=>{dispatch(setActiveModal())}}></img>
+                <img src={iconClose} className='w-[20px] h-[20px] float-right cursor-pointer' alt='закрыть' onClick={()=>{dispatch(setActiveModal())}}></img>
                 <p>Создание папки</p>
                 <form onSubmit={handleSubmit}>
                     <div>

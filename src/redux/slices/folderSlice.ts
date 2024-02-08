@@ -14,6 +14,7 @@ type FolderState = {
         children: FolderType[]
     };
     folderName: string;
+    editingFolderId: string | null;
 
 }
 
@@ -25,6 +26,7 @@ const initialState: FolderState = {
         children: []
     },
     folderName: '',
+    editingFolderId: null
 
 };
 
@@ -36,19 +38,19 @@ export const folderSlice = createSlice({
             state.activeModal = !state.activeModal;
             state.folderName = '';
         },
-        setName: (state, action) =>{
+        setName: (state, action) => {
             state.folderName = action.payload;
         },
         setFolder: (state, action) => {
             state.folders = action.payload;
-        }
-
-
+        },
+        setEditingFolderId: (state, action) => {
+            state.editingFolderId = action.payload;
+        },
     },
-
 })
 
-export const {setActiveModal, setName, setFolder} = folderSlice.actions
+export const {setActiveModal, setName, setFolder, setEditingFolderId} = folderSlice.actions
 
 
 export default folderSlice.reducer
