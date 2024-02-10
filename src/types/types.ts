@@ -12,7 +12,7 @@ export type FolderData = {
     parentId: string,
 }
 export type FileData = {
-    name: string,
-    filepath: string,
+    folderId: string,
+    file: string,
 }
 

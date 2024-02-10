@@ -1,14 +1,15 @@
 import React from 'react';
 import {useAppDispatch, useAppSelector} from "../../redux/store";
-import {setActiveModal, setEditingFolderId, setName} from "../../redux/slices/folderSlice";
+import {setActiveModal, setEditingFolderId, setFolder, setName} from "../../redux/slices/folderSlice";
 import {toast} from "react-toastify";
 import {FolderService} from "../../services/folder";
 import iconClose from '../../img/iconClose.png';
 
 
-const Modal: React.FC = () => {
+const ModalFolder: React.FC = () => {
     const dispatch = useAppDispatch();
     const {activeModal} = useAppSelector((state) => state.folder);
+    const {folders} = useAppSelector((state) => state.folder);
     const name = useAppSelector((state) => state.folder.folderName);
     const parentId = useAppSelector((state) => state.folder.folders.id);
     const editingFolderId = useAppSelector((state) => state.folder.editingFolderId);
@@ -29,7 +30,11 @@ const Modal: React.FC = () => {
                 console.log(data, 'создание');
                 toast.success('Папка успешно создана')
             }
+
+            const {data} = await FolderService.viewFolder(folders.id);
+            dispatch(setFolder(data));
             dispatch(setActiveModal())
+
         } catch (err: any) {
             const error = err.response?.data.message
             toast.error(error.toString())
@@ -44,7 +49,7 @@ const Modal: React.FC = () => {
                      onClick={() => {
                          dispatch(setActiveModal())
                      }}></img>
-                <p>Создание папки</p>
+                <p>{!editingFolderId ? 'Создание папки' : 'Редактирование папки'}</p>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label className="block text-sm font-medium leading-6 text-gray-900 my-2">Название</label>
@@ -63,7 +68,8 @@ const Modal: React.FC = () => {
                     </div>
                     <div>
                         <button type="submit"
-                                className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4">Создать
+                                className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4">
+                                {!editingFolderId ? 'Создать' : 'Редактировать'}
                         </button>
                     </div>
                 </form>
@@ -72,4 +78,4 @@ const Modal: React.FC = () => {
     );
 };
 
-export default Modal;
+export default ModalFolder;
