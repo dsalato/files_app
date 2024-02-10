@@ -1,5 +1,5 @@
 import React from 'react';
-import FolderCreate from "../components/folder/FolderCreate";
+import FolderAndFileCreate from "../components/FolderAndFileCreate";
 import ListFolder from "../components/folder/ListFolder";
 
 const Drive:React.FC = () => {
@@ -7,7 +7,7 @@ const Drive:React.FC = () => {
     return (
         <div>
             <p className='text-center my-10 text-3xl'>Папки и Файлы</p>
-            <FolderCreate/>
+            <FolderAndFileCreate/>
             <ListFolder/>
         </div>
     );

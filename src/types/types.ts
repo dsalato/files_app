@@ -11,4 +11,8 @@ export type FolderData = {
     name: string,
     parentId: string,
 }
+export type FileData = {
+    name: string,
+    filepath: string,
+}
 

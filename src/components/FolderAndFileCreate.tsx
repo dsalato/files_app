@@ -1,10 +1,10 @@
 import React from 'react';
-import Modal from "./Modal";
-import {setActiveModal} from "../../redux/slices/folderSlice";
-import {useAppDispatch} from "../../redux/store";
+import Modal from "./folder/Modal";
+import {setActiveModal} from "../redux/slices/folderSlice";
+import {useAppDispatch} from "../redux/store";
 
 
-const FolderCreate: React.FC = () => {
+const FolderAndFileCreate: React.FC = () => {
     const dispatch = useAppDispatch();
 
     return (
@@ -18,4 +18,4 @@ const FolderCreate: React.FC = () => {
     );
 };
 
-export default FolderCreate;
+export default FolderAndFileCreate;

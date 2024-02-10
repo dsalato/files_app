@@ -3,7 +3,7 @@ import {useAppDispatch, useAppSelector} from "../../redux/store";
 import {setActiveModal, setEditingFolderId, setName} from "../../redux/slices/folderSlice";
 import {toast} from "react-toastify";
 import {FolderService} from "../../services/folder";
-import iconClose  from '../../img/iconClose.png';
+import iconClose from '../../img/iconClose.png';
 
 
 const Modal: React.FC = () => {
@@ -19,29 +19,31 @@ const Modal: React.FC = () => {
             e.preventDefault();
             if (editingFolderId) {
                 // Если редактируется папка, то вызываем updateFolder
-                const data = await FolderService.updateFolder(editingFolderId, { name, parentId });
+                const data = await FolderService.updateFolder(editingFolderId, {name, parentId});
                 dispatch(setEditingFolderId(null));
                 console.log(data, 'изменение');
                 toast.success('Папка успешно изменена')
             } else {
                 // Если не редактируется, то вызываем createFolder
-                const data = await FolderService.createFolder({ name, parentId });
+                const data = await FolderService.createFolder({name, parentId});
                 console.log(data, 'создание');
                 toast.success('Папка успешно создана')
-
             }
             dispatch(setActiveModal())
-
-        }catch (err:any){
+        } catch (err: any) {
             const error = err.response?.data.message
             toast.error(error.toString())
         }
     }
 
     return (
-        <div className= { activeModal ? 'scale-1 h-[100vh] w-[100vw] bg-gray-700/45 fixed top-0 left-0 flex items-center justify-center duration-50' : 'hidden'} >
-            <div className='p-5 rounded-xl bg-white h-[200px] w-[400px]' onClick={(e) => e.stopPropagation()} >
-                <img src={iconClose} className='w-[20px] h-[20px] float-right cursor-pointer' alt='закрыть' onClick={()=>{dispatch(setActiveModal())}}></img>
+        <div
+            className={activeModal ? 'scale-1 h-[100vh] w-[100vw] bg-gray-700/45 fixed top-0 left-0 flex items-center justify-center duration-50' : 'hidden'}>
+            <div className='p-5 rounded-xl bg-white h-[200px] w-[400px]' onClick={(e) => e.stopPropagation()}>
+                <img src={iconClose} className='w-[20px] h-[20px] float-right cursor-pointer' alt='закрыть'
+                     onClick={() => {
+                         dispatch(setActiveModal())
+                     }}></img>
                 <p>Создание папки</p>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -60,7 +62,9 @@ const Modal: React.FC = () => {
                         </div>
                     </div>
                     <div>
-                        <button type="submit" className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4">Создать</button>
+                        <button type="submit"
+                                className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4">Создать
+                        </button>
                     </div>
                 </form>
             </div>

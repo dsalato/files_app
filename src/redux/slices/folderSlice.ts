@@ -24,7 +24,7 @@ const initialState: FolderState = {
         id: '',
         name: '',
         children: []
-    },
+    } ,
     folderName: '',
     editingFolderId: null
 
@@ -47,6 +47,7 @@ export const folderSlice = createSlice({
         setEditingFolderId: (state, action) => {
             state.editingFolderId = action.payload;
         },
+
     },
 })
 
