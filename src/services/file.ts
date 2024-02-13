@@ -1,15 +1,15 @@
-import {FileData, User} from "../types/types";
-import {instance} from "../api/axios";
+import {User} from "../types/types";
+import {createInstance} from "../api/axios";
 
 export const FileService = {
-
-    async createFile(FileData:FileData): Promise<User> {
-        const {data} = await instance.post<User>('/drive/files', FileData)
+    async createFile(FileData: FormData): Promise<User> {
+        const axiosInstance = await createInstance();
+        const {data} = await axiosInstance.post('/drive/files', FileData);
         return data
     },
     async deleteFile(id: string): Promise<User> {
-        const {data} = await instance.delete(`/drive/files/${id}`)
+        const axiosInstance = await createInstance();
+        const {data} = await axiosInstance.delete(`/drive/files/${id}`);
         return data
     },
-
 }

@@ -1,9 +1,13 @@
 import React from 'react';
-import ModalFolder from "./folder/ModalFolder";
+import ModalFolder from "./modal/ModalFolder";
 import {setActiveModal} from "../redux/slices/folderSlice";
 import {useAppDispatch} from "../redux/store";
 import {setActiveModalFile} from "../redux/slices/fileSlice";
-import ModalFile from "./files/ModalFile";
+import ModalFile from "./modal/ModalFile";
+import ModalMove from "./modal/ModalMove";
+import ModalDelete from "./modal/ModalDeleteFolder";
+import ModalDeleteFolder from "./modal/ModalDeleteFolder";
+import ModalDeleteFile from "./modal/ModalDeleteFile";
 
 
 const FolderAndFileCreate: React.FC = () => {
@@ -17,6 +21,10 @@ const FolderAndFileCreate: React.FC = () => {
             </div>
             <ModalFolder/>
             <ModalFile/>
+            <ModalMove/>
+            <ModalDeleteFolder/>
+            <ModalDeleteFile/>
+
         </div>
     );
 };

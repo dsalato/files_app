@@ -4,51 +4,39 @@ import {toast} from "react-toastify";
 import iconClose from '../../img/iconClose.png';
 import {setActiveModalFile, setName} from "../../redux/slices/fileSlice";
 import {FileService} from "../../services/file";
+import {FolderService} from "../../services/folder";
+import {setFolder} from "../../redux/slices/folderSlice";
 
 
 const ModalFile: React.FC = () => {
     const dispatch = useAppDispatch();
     const {activeModalFile} = useAppSelector((state) => state.file);
-    const file = useAppSelector((state) => state.file.files.name);
     const folderId = useAppSelector((state) => state.folder.folders.id);
-
-    // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    //     try {
-    //         e.preventDefault();
-    //
-    //         console.log(file)
-    //
-    //         // const data = await FileService.createFile({folderId, file});
-    //         // console.log(data, 'создание файла');
-    //         // toast.success('Файл успешно создан')
-    //         //
-    //         // dispatch(setActiveModalFile())
-    //
-    //     } catch (err: any) {
-    //         const error = err.response?.data.message
-    //         toast.error(error.toString())
-    //     }
-    // }
-
+    const folders = useAppSelector((state) => state.folder.folders);
+    const [fileNew, setFileNew] = useState<File | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files?.[0];
-        if (file) {
-            console.log(file);
-            dispatch(setName(file.name));
+        if (event.target.files){
+            setFileNew(event.target.files[0])
+            dispatch(setName(event.target.files[0].name));
         }
-    };
+        }
+
 
     const handleUpload = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log(file);
-        if (file !== '') {
-            console.log(file);
-            const data = await FileService.createFile({folderId, file});
-            console.log(data, 'создание файла');
+
+        if (fileNew) {
+            const formData = new FormData();
+            formData.append('folderId', folderId);
+            formData.append('file', fileNew);
+
+            await FileService.createFile(formData);
             toast.success('Файл успешно создан')
+            dispatch(setActiveModalFile())
         }
-        console.log('Отправить')
+        const {data} = await FolderService.viewFolder(folders.id);
+        dispatch(setFolder(data));
     };
 
 

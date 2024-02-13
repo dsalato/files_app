@@ -20,14 +20,12 @@ const ModalFolder: React.FC = () => {
             e.preventDefault();
             if (editingFolderId) {
                 // Если редактируется папка, то вызываем updateFolder
-                const data = await FolderService.updateFolder(editingFolderId, {name, parentId});
-                dispatch(setEditingFolderId(null));
-                console.log(data, 'изменение');
+                await FolderService.updateFolder(editingFolderId, {name, parentId});
+                dispatch(setEditingFolderId(''));
                 toast.success('Папка успешно изменена')
             } else {
                 // Если не редактируется, то вызываем createFolder
-                const data = await FolderService.createFolder({name, parentId});
-                console.log(data, 'создание');
+                await FolderService.createFolder({name, parentId})
                 toast.success('Папка успешно создана')
             }
 

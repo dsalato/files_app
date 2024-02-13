@@ -10,9 +10,21 @@ export type UserData = {
 export type FolderData = {
     name: string,
     parentId: string,
+
 }
-export type FileData = {
-    folderId: string,
-    file: string,
+export type File = {
+    name: string;
+    filepath: string;
 }
+export type FileType = {
+    id: string;
+    file: File;
+    type: "file"
+}
+export type FolderType = {
+    id: string,
+    name: string,
+    type: "folder"
+}
+
 
