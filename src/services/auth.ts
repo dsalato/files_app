@@ -1,5 +1,5 @@
 import {User, UserData} from "../types/types";
-import {createInstance, instance} from "../api/axios";
+import {createInstance} from "../api/axios";
 
 export const AuthService = {
     async registration(userData:UserData): Promise<User | undefined>{

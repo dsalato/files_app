@@ -1,17 +1,16 @@
 import React from 'react';
-
-
 import iconClose from '../../img/iconClose.png';
 import {useAppDispatch, useAppSelector} from "../../redux/store";
 import {FolderService} from "../../services/folder";
-import {setActiveModalDeleteFile, setFolder} from "../../redux/slices/folderSlice";
+import {setFolder} from "../../redux/slices/folderSlice";
 import {toast} from "react-toastify";
 import {FileService} from "../../services/file";
+import {setActiveModalDeleteFile} from "../../redux/slices/fileSlice";
 
 
 const ModalDeleteFile: React.FC = () => {
     const dispatch = useAppDispatch();
-    const {activeModalDeleteFile,deleteFileId} = useAppSelector((state) => state.folder);
+    const {activeModalDeleteFile, deleteFileId} = useAppSelector((state) => state.file);
     const parentId = useAppSelector((state) => state.folder.folders.id);
 
     const onConfirmDelete = async () => {
@@ -20,8 +19,8 @@ const ModalDeleteFile: React.FC = () => {
         dispatch(setFolder(data));
         toast.success('Файл успешно удален')
         dispatch(setActiveModalDeleteFile())
-
     }
+
     const onRequestClose = () => {
         dispatch(setActiveModalDeleteFile())
     }
@@ -35,13 +34,15 @@ const ModalDeleteFile: React.FC = () => {
                          dispatch(setActiveModalDeleteFile())
                      }}></img>
 
-                <p>Вы уверены, что хотите удалить файл?</p>
+                <p className='mb-4 mt-8'>Вы уверены, что хотите удалить файл?</p>
                 <button onClick={onConfirmDelete}
                         className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4"
-                >Да</button>
+                >Да
+                </button>
                 <button onClick={onRequestClose}
                         className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4"
-                >Отмена</button>
+                >Отмена
+                </button>
             </div>
         </div>
     );

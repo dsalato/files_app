@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
+import type {PayloadAction} from '@reduxjs/toolkit'
 import {User} from "../../types/types";
 
-interface UserState {
+type UserState = {
     isAuth: boolean,
     token: User | null,
     typeOfForm: boolean,
@@ -18,7 +18,6 @@ const initialState: UserState = {
     password: '',
 }
 
-
 export const userSlice = createSlice({
     name: 'user',
     initialState,
@@ -31,20 +30,20 @@ export const userSlice = createSlice({
             state.token = null;
             state.isAuth = false;
         },
-        changeTypeOfForm: (state, action: PayloadAction<boolean> ) => {
+        changeTypeOfForm: (state, action: PayloadAction<boolean>) => {
             state.typeOfForm = action.payload
         },
-        setPassword: (state, action) =>{
+        setPassword: (state, action) => {
             state.password = action.payload;
         },
-        setLogin: (state, action) =>{
+        setLogin: (state, action) => {
             state.login = action.payload;
         }
 
     },
 })
 
-export const {authLogin,logout,changeTypeOfForm,setLogin,setPassword} = userSlice.actions
+export const {authLogin, logout, changeTypeOfForm, setLogin, setPassword} = userSlice.actions
 
 
 export default userSlice.reducer

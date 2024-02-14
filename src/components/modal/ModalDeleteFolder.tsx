@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 import iconClose from '../../img/iconClose.png';
 import {useAppDispatch, useAppSelector} from "../../redux/store";
 import {FolderService} from "../../services/folder";
@@ -19,8 +17,8 @@ const ModalDeleteFolder: React.FC = () => {
         dispatch(setFolder(data));
         toast.success('Папка успешно удалена')
         dispatch(setActiveModalDeleteFolder())
-
     }
+
     const onRequestClose = () => {
         dispatch(setActiveModalDeleteFolder())
     }
@@ -34,13 +32,15 @@ const ModalDeleteFolder: React.FC = () => {
                          dispatch(setActiveModalDeleteFolder())
                      }}></img>
 
-                <p>Вы уверены, что хотите удалить папку?</p>
+                <p className='mb-4 mt-8'>Вы уверены, что хотите удалить папку?</p>
                 <button onClick={onConfirmDelete}
                         className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4"
-                >Да</button>
+                >Да
+                </button>
                 <button onClick={onRequestClose}
                         className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4"
-                >Отмена</button>
+                >Отмена
+                </button>
             </div>
         </div>
     );

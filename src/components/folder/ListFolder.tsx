@@ -9,8 +9,6 @@ import {
     setFolderId,
     setDeleteFolderId,
     setActiveModalDeleteFolder,
-    setActiveModalDeleteFile,
-    setDeleteFileId,
 } from "../../redux/slices/folderSlice";
 import {FolderService} from "../../services/folder";
 import iconEdit from "../../img/iconEdit.png";
@@ -18,20 +16,18 @@ import iconDelete from "../../img/iconDelete.png";
 import iconMove from "../../img/iconMove.png";
 import iconFile from "../../img/iconFile.png";
 import iconFolder from "../../img/iconFolder.png"
-
-import {FileService} from "../../services/file";
+import {setActiveModalDeleteFile, setDeleteFileId} from "../../redux/slices/fileSlice";
 
 const ListFolder: React.FC = () => {
     const {folders} = useAppSelector((state) => state.folder);
-    const parentId = useAppSelector((state) => state.folder.folders.id);
     const dispatch = useAppDispatch();
 
-    const moveFolder = async (id: string) => {
+    const getData = async (id: string) => {
         const {data} = await FolderService.viewFolder(id);
         dispatch(setFolder(data));
     }
 
-    const getData = async (id: string) => {
+    const moveFolder = async (id: string) => {
         const {data} = await FolderService.viewFolder(id);
         dispatch(setFolder(data));
     }
@@ -50,7 +46,6 @@ const ListFolder: React.FC = () => {
     const handleDeleteFolder = async (folderId: string) => {
         dispatch(setDeleteFolderId(folderId));
         dispatch(setActiveModalDeleteFolder());
-
     };
 
     const handleDeleteFile = async (folderId: string) => {
@@ -59,14 +54,9 @@ const ListFolder: React.FC = () => {
 
     };
 
-
     useEffect(() => {
         getData('root');
     }, [])
-
-    useEffect(() => {
-    }, [folders]);
-
 
     return (
         <>
@@ -77,45 +67,44 @@ const ListFolder: React.FC = () => {
                     moveFolder('root')
                 }}>Переход к корневой папке</p>
             </div>
-
             <div>
-            {folders.children.map((el) => (
-                el.type === 'folder' ?
-                    <div key={el.id} className='flex items-center justify-center my-2'>
-                        <img className='w-[20px] h-[20px] mx-1' alt='папка' src={iconFolder}/>
-                        <p className=' text-center text-[16px] cursor-pointer' onClick={() => {
-                            moveFolder(el.id)
-                        }}>{el.name}</p>
+                {folders.children.map((el) => (
+                    el.type === 'folder' ?
+                        <div key={el.id} className='flex items-center justify-center my-2'>
+                            <img className='w-[20px] h-[20px] mx-1' alt='папка' src={iconFolder}/>
+                            <p className=' text-center text-[16px] cursor-pointer' onClick={() => {
+                                moveFolder(el.id)
+                            }}>{el.name}</p>
 
-                        <img src={iconEdit} alt='iconEdit' className='w-[20px] h-[20px] ml-10 mr-2 cursor-pointer'
-                             onClick={() => {
-                                 handleEditFolder(el.id);
-                             }}></img>
-                        <img src={iconDelete} alt='iconDelete' className='w-[20px] h-[20px] mx-2 cursor-pointer'
-                             onClick={() => {
-                                 handleDeleteFolder(el.id);
-                             }}></img>
-                        <img src={iconMove} alt='iconMove' className='w-[20px] h-[20px] mx-2 cursor-pointer'
-                             onClick={() => {
-                                 handleMoveFolder(el.id, el.name);
-                             }}></img>
-                    </div>
-                :
-                    <div key={el.id} className='flex items-center justify-center my-2'>
-                        {el.type === 'file' &&
-                            <div className='flex items-center justify-center'>
-                                <img className='w-[20px] h-[20px] ' alt='папка' src={iconFile}/>
-                                <p className=' text-center text-[16px] cursor-pointer'>{el.file.name}</p>
-                            </div>
+                            <img src={iconEdit} alt='iconEdit' className='w-[20px] h-[20px] ml-10 mr-2 cursor-pointer'
+                                 onClick={() => {
+                                     handleEditFolder(el.id);
+                                 }}></img>
+                            <img src={iconDelete} alt='iconDelete' className='w-[20px] h-[20px] mx-2 cursor-pointer'
+                                 onClick={() => {
+                                     handleDeleteFolder(el.id);
+                                 }}></img>
+                            <img src={iconMove} alt='iconMove' className='w-[20px] h-[20px] mx-2 cursor-pointer'
+                                 onClick={() => {
+                                     handleMoveFolder(el.id, el.name);
+                                 }}></img>
+                        </div>
+                        :
+                        <div key={el.id} className='flex items-center justify-center my-2'>
+                            {el.type === 'file' &&
+                                <div className='flex items-center justify-center'>
+                                    <img className='w-[20px] h-[20px] ' alt='папка' src={iconFile}/>
+                                    <p className=' text-center text-[16px] cursor-pointer'>{el.file.name}</p>
+                                </div>
 
-                        }
-                        <img src={iconDelete} alt='iconDelete' className='w-[20px] h-[20px] ml-8 cursor-pointer'
-                             onClick={() => {
-                                 handleDeleteFile(el.id);
-                             }}></img>
+                            }
+                            <img src={iconDelete} alt='iconDelete' className='w-[20px] h-[20px] ml-8 cursor-pointer'
+                                 onClick={() => {
+                                     handleDeleteFile(el.id);
+                                 }}></img>
 
-                    </div>
-            ))}
+                        </div>
+                ))}
             </div>
         </>
     );

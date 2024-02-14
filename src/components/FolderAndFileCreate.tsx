@@ -5,7 +5,6 @@ import {useAppDispatch} from "../redux/store";
 import {setActiveModalFile} from "../redux/slices/fileSlice";
 import ModalFile from "./modal/ModalFile";
 import ModalMove from "./modal/ModalMove";
-import ModalDelete from "./modal/ModalDeleteFolder";
 import ModalDeleteFolder from "./modal/ModalDeleteFolder";
 import ModalDeleteFile from "./modal/ModalDeleteFile";
 

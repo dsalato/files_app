@@ -22,7 +22,6 @@ const ModalFile: React.FC = () => {
         }
         }
 
-
     const handleUpload = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 

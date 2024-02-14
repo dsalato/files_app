@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {isAuthenticated} from "../components/isAuthenticated";
-import {useAppSelector} from "../redux/store";
 
 const Home:React.FC = () => {
     const isAuth = isAuthenticated();

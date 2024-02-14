@@ -3,10 +3,8 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import Main from './layouts/Main';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
-import Profile from "./pages/Drive";
 import {isAuthenticated} from "./components/isAuthenticated";
 import Drive from "./pages/Drive";
-
 
 // Гостевой компонент
 const GuestRoute = ({ element }: any) => {

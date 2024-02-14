@@ -14,7 +14,6 @@ const ModalFolder: React.FC = () => {
     const parentId = useAppSelector((state) => state.folder.folders.id);
     const editingFolderId = useAppSelector((state) => state.folder.editingFolderId);
 
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault();
@@ -67,7 +66,7 @@ const ModalFolder: React.FC = () => {
                     <div>
                         <button type="submit"
                                 className="flex w-full justify-center rounded-md bg-yellow-400 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 my-4">
-                                {!editingFolderId ? 'Создать' : 'Редактировать'}
+                            {!editingFolderId ? 'Создать' : 'Редактировать'}
                         </button>
                     </div>
                 </form>

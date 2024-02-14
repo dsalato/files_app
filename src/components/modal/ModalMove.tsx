@@ -17,7 +17,6 @@ const ModalMove: React.FC = () => {
     const id = useAppSelector((state) => state.folder.folders.id);
     const parentId = useAppSelector((state) => state.folder.movingFolderId);
 
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault();
@@ -33,7 +32,6 @@ const ModalMove: React.FC = () => {
             return err.response?.data.message
         }
     }
-
 
     return (
         <div

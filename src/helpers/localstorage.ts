@@ -8,6 +8,6 @@ export const setTokenFromLocalStorage = (key: string, token: string): void => {
     localStorage.setItem(key, JSON.stringify(token));
 };
 
-export const removeTokenFromLocalStorage = (key:string,): void => {
+export const removeTokenFromLocalStorage = (key: string,): void => {
     localStorage.removeItem(key);
 }

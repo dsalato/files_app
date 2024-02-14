@@ -1,12 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
-
-interface FileState {
+type FileState = {
     files: {
         name: string,
         filepath: string
     },
     activeModalFile: boolean,
+    activeModalDeleteFile: boolean;
+    deleteFileId: string;
 }
 
 const initialState: FileState = {
@@ -15,8 +16,9 @@ const initialState: FileState = {
         filepath: ''
     },
     activeModalFile: false,
+    activeModalDeleteFile: false,
+    deleteFileId: '',
 }
-
 
 export const fileSlice = createSlice({
     name: 'file',
@@ -28,10 +30,15 @@ export const fileSlice = createSlice({
         setActiveModalFile: (state) => {
             state.activeModalFile = !state.activeModalFile;
         },
+        setActiveModalDeleteFile: (state) => {
+            state.activeModalDeleteFile = !state.activeModalDeleteFile;
+        },
+        setDeleteFileId: (state, action) => {
+            state.deleteFileId = action.payload;
+        },
     },
 })
 
-export const {setName, setActiveModalFile} = fileSlice.actions
-
+export const {setName, setActiveModalFile, setActiveModalDeleteFile, setDeleteFileId} = fileSlice.actions
 
 export default fileSlice.reducer

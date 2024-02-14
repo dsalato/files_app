@@ -11,7 +11,7 @@ const Header: React.FC = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const logoutHandker = () => {
+    const logoutHandler = () => {
         removeTokenFromLocalStorage('token');
         dispatch(logout());
         navigate('/');
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
 
     return (
         <div className='flex justify-around items-center py-5 border-b-2 border-solid border-black'>
-            <Link to='/' className="text-2xl font-bold text-yellow-400">HEADER</Link>
+            <Link to='/' className="text-2xl font-bold text-yellow-400">Disk_App</Link>
             {!isAuth ? <span className=''>
                 <Link to='/auth' onClick={() => dispatch(changeTypeOfForm(true))}
                       className='mx-3 text-lg hover:bg-yellow-400 py-4 px-2 rounded'>Вход</Link>
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
             </span> : <span className=''>
                 <Link to='/drive' className='mx-3 text-lg hover:bg-yellow-400 py-4 px-2 rounded'>Папки и Файлы</Link>
                 <Link to='/' className='mx-3 text-lg hover:bg-yellow-400 py-4 px-2 rounded'
-                      onClick={logoutHandker}>Выход</Link>
+                      onClick={logoutHandler}>Выход</Link>
             </span>}
 
         </div>

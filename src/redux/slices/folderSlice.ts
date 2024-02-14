@@ -5,7 +5,6 @@ type FolderState = {
     activeModal: boolean;
     activeModalMove: boolean;
     activeModalDeleteFolder: boolean;
-    activeModalDeleteFile: boolean;
     folders: {
         id: string,
         name: string,
@@ -15,24 +14,23 @@ type FolderState = {
     editingFolderId: string;
     movingFolderId: string;
     deleteFolderId: string;
-    deleteFileId: string;
+
 }
 
 const initialState: FolderState = {
     activeModal: false,
     activeModalMove: false,
     activeModalDeleteFolder: false,
-    activeModalDeleteFile: false,
     folders: {
         id: '',
         name: '',
         children: []
-    } ,
+    },
     folderName: '',
     editingFolderId: '',
     movingFolderId: '',
     deleteFolderId: '',
-    deleteFileId: '',
+
 };
 
 export const folderSlice = createSlice({
@@ -48,9 +46,6 @@ export const folderSlice = createSlice({
         },
         setActiveModalDeleteFolder: (state) => {
             state.activeModalDeleteFolder = !state.activeModalDeleteFolder;
-        },
-        setActiveModalDeleteFile: (state) => {
-            state.activeModalDeleteFile = !state.activeModalDeleteFile;
         },
         setName: (state, action) => {
             state.folderName = action.payload;
@@ -73,14 +68,23 @@ export const folderSlice = createSlice({
         setDeleteFolderId: (state, action) => {
             state.deleteFolderId = action.payload;
         },
-        setDeleteFileId: (state, action) => {
-            state.deleteFileId = action.payload;
-        },
+
 
     },
 })
 
-export const {setActiveModal, setActiveModalMove, setActiveModalDeleteFolder,setActiveModalDeleteFile, setName, setFolderId, setFolderName, setFolder, setEditingFolderId, setMovingFolderId, setDeleteFolderId, setDeleteFileId} = folderSlice.actions
+export const {
+    setActiveModal,
+    setActiveModalMove,
+    setActiveModalDeleteFolder,
+    setName,
+    setFolderId,
+    setFolderName,
+    setFolder,
+    setEditingFolderId,
+    setMovingFolderId,
+    setDeleteFolderId
+} = folderSlice.actions
 
 
 export default folderSlice.reducer
