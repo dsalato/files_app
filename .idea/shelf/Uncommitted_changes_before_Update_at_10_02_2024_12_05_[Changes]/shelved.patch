@@ -1,0 +1,418 @@
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1707386903662)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1707386903662)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
++  </profile>
++</component>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1707386903734)
++++ b/.idea/vcs.xml	(date 1707386903734)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1707534395407)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07__Changes_.xml	(date 1707534395407)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Update_at_08_02_2024_17_07_[Changes]" date="1707386834111" recycled="false" toDelete="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Update at 08.02.2024 17:07 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1707386834108)
++++ b/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07_[Changes]/shelved.patch	(date 1707386834108)
+@@ -0,0 +1,91 @@
++Index: .idea/files_app.iml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/files_app.iml b/.idea/files_app.iml
++new file mode 100644
++--- /dev/null	(date 1706522459223)
+++++ b/.idea/files_app.iml	(date 1706522459223)
++@@ -0,0 +1,12 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<module type="WEB_MODULE" version="4">
+++  <component name="NewModuleRootManager">
+++    <content url="file://$MODULE_DIR$">
+++      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+++      <excludeFolder url="file://$MODULE_DIR$/temp" />
+++      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+++    </content>
+++    <orderEntry type="inheritedJdk" />
+++    <orderEntry type="sourceFolder" forTests="false" />
+++  </component>
+++</module>
++\ No newline at end of file
++Index: .idea/inspectionProfiles/Project_Default.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
++new file mode 100644
++--- /dev/null	(date 1706522459194)
+++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1706522459194)
++@@ -0,0 +1,6 @@
+++<component name="InspectionProjectProfileManager">
+++  <profile version="1.0">
+++    <option name="myName" value="Project Default" />
+++    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+++  </profile>
+++</component>
++\ No newline at end of file
++Index: .idea/vcs.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/vcs.xml b/.idea/vcs.xml
++new file mode 100644
++--- /dev/null	(date 1706522459239)
+++++ b/.idea/vcs.xml	(date 1706522459239)
++@@ -0,0 +1,6 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project version="4">
+++  <component name="VcsDirectoryMappings">
+++    <mapping directory="" vcs="Git" />
+++  </component>
+++</project>
++\ No newline at end of file
++Index: .idea/modules.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/modules.xml b/.idea/modules.xml
++new file mode 100644
++--- /dev/null	(date 1706522459231)
+++++ b/.idea/modules.xml	(date 1706522459231)
++@@ -0,0 +1,8 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project version="4">
+++  <component name="ProjectModuleManager">
+++    <modules>
+++      <module fileurl="file://$PROJECT_DIR$/.idea/files_app.iml" filepath="$PROJECT_DIR$/.idea/files_app.iml" />
+++    </modules>
+++  </component>
+++</project>
++\ No newline at end of file
++Index: .idea/.gitignore
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/.idea/.gitignore b/.idea/.gitignore
++new file mode 100644
++--- /dev/null	(date 1706522459349)
+++++ b/.idea/.gitignore	(date 1706522459349)
++@@ -0,0 +1,5 @@
+++# Default ignored files
+++/shelf/
+++/workspace.xml
+++# Editor-based HTTP Client requests
+++/httpRequests/
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1707541367264)
++++ b/.idea/workspace.xml	(date 1707541367264)
+@@ -0,0 +1,164 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="dd3fc446-f445-45b2-b7ec-d63373db8211" name="Changes" comment="редактирование папки и удаление папки, переход по папкам">
++      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2024_17_07__Changes_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/components/folder/ListFolder.tsx" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/img/iconClose.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/img/iconDelete.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/img/iconEdit.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/services/file.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/folder/FolderCreate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FolderAndFileCreate.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/folder/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/folder/Modal.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/pages/Drive.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Drive.tsx" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/redux/slices/folderSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/folderSlice.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ChangesViewManager" show_ignored="true">
++    <option name="groupingKeys">
++      <option value="directory" />
++    </option>
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="TypeScript JSX File" />
++        <option value="TypeScript File" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 5
++}</component>
++  <component name="ProjectId" id="2bclrh0ZdXXyaWgYKQU47UnYNk0" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/IPST/Задания/files_app&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;D:\\IPST\\Задания\\files_app\\node_modules\\typescript\\lib&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  }
++}</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="D:\IPST\Задания\files_app\src\components" />
++      <recent name="D:\IPST\Задания\files_app\src\img" />
++    </key>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="dd3fc446-f445-45b2-b7ec-d63373db8211" name="Changes" comment="" />
++      <created>1706522447589</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1706522447589</updated>
++      <workItem from="1706522448624" duration="4284000" />
++      <workItem from="1706598695334" duration="4848000" />
++      <workItem from="1706606891311" duration="9572000" />
++      <workItem from="1706618906662" duration="5746000" />
++      <workItem from="1706672615755" duration="1036000" />
++      <workItem from="1706677502987" duration="2769000" />
++      <workItem from="1706778274107" duration="6412000" />
++      <workItem from="1706788387446" duration="5846000" />
++      <workItem from="1706860203341" duration="9252000" />
++      <workItem from="1706937987152" duration="9742000" />
++      <workItem from="1706957211291" duration="1547000" />
++      <workItem from="1707019722640" duration="5749000" />
++      <workItem from="1707065021532" duration="957000" />
++      <workItem from="1707106874103" duration="3535000" />
++      <workItem from="1707117896631" duration="666000" />
++      <workItem from="1707221596927" duration="9837000" />
++      <workItem from="1707276010224" duration="8446000" />
++      <workItem from="1707296336303" duration="2546000" />
++      <workItem from="1707364161133" duration="11652000" />
++      <workItem from="1707386730909" duration="160000" />
++      <workItem from="1707386893963" duration="2362000" />
++      <workItem from="1707478414989" duration="251000" />
++      <workItem from="1707534380668" duration="6907000" />
++    </task>
++    <task id="LOCAL-00001" summary="Базовая настройка">
++      <option name="closed" value="true" />
++      <created>1706524751840</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1706524751840</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Регистрация\авторизация">
++      <option name="closed" value="true" />
++      <created>1706625099663</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1706625099663</updated>
++    </task>
++    <task id="LOCAL-00003" summary="добавление защищенной авторизации и гостевые ендпоинты, возможность просмотра пароля">
++      <option name="closed" value="true" />
++      <created>1706867329240</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1706867329240</updated>
++    </task>
++    <task id="LOCAL-00004" summary="создание папки и просмотр папки">
++      <option name="closed" value="true" />
++      <created>1707279346546</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1707279346546</updated>
++    </task>
++    <task id="LOCAL-00005" summary="редактирование папки и удаление папки, переход по папкам">
++      <option name="closed" value="true" />
++      <created>1707386821844</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1707386821844</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Базовая настройка" />
++    <MESSAGE value="Регистрация\авторизация" />
++    <MESSAGE value="добавление защищенной авторизации и гостевые ендпоинты, возможность просмотра пароля" />
++    <MESSAGE value="создание папки и просмотр папки" />
++    <MESSAGE value="редактирование папки и удаление папки, переход по папкам" />
++    <option name="LAST_COMMIT_MESSAGE" value="редактирование папки и удаление папки, переход по папкам" />
++  </component>
++</project>
+\ No newline at end of file
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+new file mode 100644
+--- /dev/null	(date 1674551727000)
++++ b/README.md	(date 1674551727000)
+@@ -0,0 +1,82 @@
++# Задание Диск
++
++Необходимо реализовать приложение, которое бы позволило хранить файлы, а так же организовывать папочные структуру
++
++Для это необходимо реализовать следующий набор функций
++
++- Регистрация
++- Авторизация
++
++
++- Просмотр папки
++- Создание папки
++- Редактирование папки
++- Удаление папки
++
++
++- Загрузка файла на сервер в определенную папку
++- Удаление файла из папки
++
++
++## Регистрация и Авторизация
++
++Необходимо сделать защищенные авторизацией и гостевые ендпоинты. Если есть пользовательский токен с API, то давать доступ к ендпоинтам с авторизацией.
++
++### Форма регистрации и авторизации
++Должна содержать следующие поля
++	
++	- login - Логин пользователя
++	- password - Пароль пользователя (необходимо использовать для данного поля input[type=password],
++		с возможностью переключения на input[type=text])
++
++Для данной формы должна быть реализована валидация, на обязательность.
++
++
++## Папки и Файлы
++
++Доступ до этих разделов может получить только авторизованный пользователь.
++
++### Рабочая область (Главный экран)
++  
++Представляет собой область с папками и файлами, изначально запрашивается корневая папка для текущего пользователя (root). Затем если пользователь заходит в новую папку то отображается файлы и дочерние папки для папки, которую выбрал пользователь.
++
++### Форма создания папки
++Форма создания папки должна находится в модальном окне, которое может быть вызвано любым способом на ваш выбор (горячая клавиша, кнопка в интерфейсе, выпадающий список при клике на рабочую область и т.д.)
++
++Форма должна содержать следующие поля
++		
++	name - Название папки
++	
++	Так же при создании папки необходимо передавать parentId - root или ID папки, 
++	для того чтобы понимать для какой папки эта папка станет дочерней
++
++### Форма создания файла
++Форма аналогична "форме создания папки", и содержит следующие поля
++
++	file - Файл, которой нужно сохранить на сервер
++	
++	Так же при создании файла необходимо передавать parentId - root или ID папки, 
++	для того чтобы понимать для какой папки этот файл станет дочерним
++
++### Редактирование папок
++Форма аналогична "форме создания папки".
++	
++	name - название папки
++
++### Перемещение папок
++Для перемещения папки необходимо изменить ей parentId, для этого можно использовать наработки из 
++формы "редактирование папок". Визуальное перемещение можно реализовать любым способом (кнопкой в интерфейсе, дополнительным модальным окном, drag&drop и т.д.)
++
++### Удаление папки или файла
++При удаление папки или файла, необходимо вызывать модальное окно с подтверждением удаления и только после этого удалять контент
++
++
++## Рекомендации к выполнения
++
++При реализации данного задания нужно использовать react.js и дополнительные к нему библиотеки
++
++Для визуальной составляющей приложения можно использовать [MUI](https://mui.com/material-ui/getting-started/overview/) или [tailwindcss](https://tailwindcss.com/docs/installation). 
++<!--stackedit_data:
++eyJoaXN0b3J5IjpbLTE4NjM1MDYzODksLTE2NTQyMTExMDksLT
++ExNzIzMTgzNDRdfQ==
++-->
+\ No newline at end of file
